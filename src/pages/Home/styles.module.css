@@ -1,0 +1,117 @@
+.Main {
+	font-size: 1.6rem;
+}
+.Header {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	background: url(https://i0.wp.com/www.actividadesdeinfantilyprimaria.com/wp-content/uploads/2020/08/fondos-clase-virtual-10.jpg?resize=1024%2C576&ssl=1);
+	background-size: cover;
+	background-position: center;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Header section {
+	background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 40px;
+  font-family: sans-serif;
+  text-align: center;
+  line-height: 1;
+ -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  max-width: 50%;
+  max-height: 50%;
+  padding: 30px 30px;
+}
+
+.Main button {
+	padding: 13px 25px;
+	color: #000;
+	background-color: #fff;
+	border: 0px;
+	border-radius: 40px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+
+.Header button:hover {
+}
+
+.Header .btnDos{
+	margin-left: 30px;
+	color: #fff;
+	background-color: #303030;
+}
+
+.TwoColums {
+	padding: 160px 200px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.TwoColums img{
+	height: 490px;
+	border-radius: 16px;
+	margin-right: 10px;
+}
+
+.TwoColums .margen {
+	margin-left: 20px;
+}
+
+.firstImages {
+	display: flex;
+	flex-direction: row;
+}
+
+.info {
+	width: 400px;
+	text-align: left;
+}
+
+.imgReproductor {
+	margin-top: 320px;
+	position: absolute;
+	max-height: 190px;
+	right: 300px;
+	border-radius: 16px;
+}
+
+.OneColumn {
+	padding: 160px 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.OneColumn button {
+	color: #fff;
+	background-color: #40345c;
+	margin-bottom: 50px;
+}
+
+.imgLeft {
+	margin-top: 80px;
+	position: absolute;
+	min-height: 490px;
+	left: 60px;
+	border-radius: 16px;
+}
+
+.imgCenter {
+	min-height: 590px;
+	border-radius: 16px;
+}
+
+.imgRight {
+	margin-top: 80px;
+	position: absolute;
+	min-height: 490px;
+	right: 60px;
+	border-radius: 16px;
+}

@@ -1,0 +1,93 @@
+h2{
+	margin: 0;
+}
+.content {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	margin-top: 30px;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+.item{
+	background-Color: #40345c;
+	border-radius: 14px;
+}
+.itemContent {
+	flex-direction: column;
+}
+.itemInfo {
+	display: flex;
+	margin: 12px 12px;
+	justify-content: space-between;
+	align-items: center;
+}
+.image {
+	height: 80px;
+}
+.ItemImage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.title {
+	color: #fff;
+	font-size: 16px;
+	text-align: left;
+	margin: 0;
+}
+.count {
+	color: #fff;
+	font-Size: 14px;
+	text-align: left;
+	margin: 0;
+}
+.icon {
+	padding: 4px;
+	background-Color: rgba(0, 0, 0, 0.1);
+	border: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 100%;
+}
+.icon:hover {
+	background-Color: rgba(0, 0, 0, 0.3);
+}
+img {
+	height: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+	.content{
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.container{
+		display: flex;
+		margin-left: 90px;
+		margin-top: 30px;
+		margin-right: 20px
+	}
+}
+@media screen and (max-width: 800px) {
+	.content{
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.container{
+		display: flex;
+		margin-left: 90px;
+		margin-top: 30px;
+		margin-right: 20px
+	}
+}
+@media screen and (max-width: 580px) {
+	.content{
+		grid-template-columns: 1fr;
+	}
+	.container{
+		display: flex;
+		margin-left: 90px;
+		margin-top: 30px;
+		margin-right: 20px
+	}
+}
