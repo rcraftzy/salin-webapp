@@ -1,0 +1,33 @@
+.wrapper {
+  position: relative;
+  padding: 4px;
+  display: flex;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+/*.player {*/
+  /*background-image: url('assets/sound.png');*/
+	/*justify-content: space-between;*/
+	/*align-items: center;*/
+/*}*/
+
+.player {
+  border-radius: 100%;
+  cursor: pointer;
+  background-size: contain;
+  background-image: url('assets/sound.png');
+  background-position: center center;
+  background-Color: rgba(0, 0, 0, 0.1);
+  border: 0;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+.player:hover {
+  background-Color: rgba(0, 0, 0, 0.3);
+}
+.hidden {
+  background-image: url('assets/sound.png');
+}
+

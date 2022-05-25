@@ -41,19 +41,6 @@ h2{
 	text-align: left;
 	margin: 0;
 }
-.icon {
-	padding: 4px;
-	background-Color: rgba(0, 0, 0, 0.1);
-	border: none;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	cursor: pointer;
-	border-radius: 100%;
-}
-.icon:hover {
-	background-Color: rgba(0, 0, 0, 0.3);
-}
 img {
 	height: 40px;
 }

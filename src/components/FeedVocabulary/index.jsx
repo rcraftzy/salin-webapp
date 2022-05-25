@@ -1,23 +1,21 @@
 import styles from './styles.module.css'
 import { getVocabulary } from '../../services'
 import {useEffect, useState} from 'react'
+import AudioPlayer from '../AudioPlayer';
   
 export default function FeedVocabulary() {
-  //const src = 'assets/audio/alphabet1.wav';
-  //const playB = () => new Audio(src).play();
-
   const [vocabulary, setVocabulary] = useState([])
   const [error, setError] = useState(null)
 
  const getVocabularies = async () => {
-    getVocabulary().then(([error, vocabulary]) => {
+    const data = await getVocabulary().then(([error, vocabulary]) => {
       if (error) return setError(error)
-      setVocabulary(vocabulary)
-    }) 
+      return vocabulary
+    });
+    setVocabulary(data)
   }
 
   useEffect (() => {
-    
     getVocabularies();
   },[])
 
@@ -43,16 +41,18 @@ export default function FeedVocabulary() {
                   <p className={styles.count}>26 contents</p>
                 </div>
                 <div>
-                  <a className={styles.icon}>
-                    <img  src="assets/sound.png"/>
-                  </a>
+                  <AudioPlayer 
+                    {...vocabulary}
+                    src={sound}
+                  />
                 </div>
               </div>
             </article>
           </section>
-        ))}
+          )
+        )}
       </div>
     </>
   )
 }
-  
+
