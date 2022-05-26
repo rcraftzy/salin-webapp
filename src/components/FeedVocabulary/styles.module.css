@@ -1,3 +1,21 @@
+header {
+	display: flex;
+	justify-content: space-between;
+}
+.button {
+	font-size: 14px;
+	transition: background-color 0.5s ease;
+	background-color: #674dde;
+	color: #fff;
+	align-self: center;
+	padding: 10px 15px;
+	border-radius: 30px;
+	text-decoration: none;
+	border: none;
+}
+.button:hover {
+	background-color: #7b62e3;
+}
 h2{
 	margin: 0;
 }
