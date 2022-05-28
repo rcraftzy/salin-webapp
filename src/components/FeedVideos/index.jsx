@@ -1,91 +1,53 @@
+import {useEffect, useState} from 'react'
+import ReactPlayer from 'react-player'
+import {getVideos} from '../../services'
 import styles from './styles.module.css'
 
 export default function FeedVideos() {
+  const [videos, setVideos] = useState([])
+  const [error, setError] = useState(null)
+
+  const getVideo = async () => {
+    getVideos().then(([error, videos]) => {
+      if (error) return setError(error)
+      setVideos(videos)
+    })
+  }
+  useEffect(() => {
+    getVideo();
+  })
+
+  if (error) {
+    return <span>{error}</span>
+  }
+
   return (
     <>
-      <h2>Videos</h2>
+      <header>
+        <h2>Videos</h2>
+        <a className={styles.button}>New video</a>
+      </header>
       <div className={styles.content}>
-        <section className={styles.item}>
-          <article className={styles.itemContent}>
-            <div>
-              <img />
-            </div>
-            <div className={styles.itemInfo}>
-              <div>
-                <h1 className={styles.title}>Alphabet</h1>
-                <p className={styles.count}>26 contents</p>
+        {videos.map(({id, title, src}) => (
+          <section key={id} className={styles.item}>
+            <article className={styles.itemContent}>
+              <div className={styles.imageVideo}>
+                <ReactPlayer 
+                  url={src}
+                  width='100%'
+                  height= '160px'
+                  controls
+                />
               </div>
-              <div>
-                <img />
+              <div className={styles.itemInfo}>
+                <div>
+                  <h1 className={styles.title}>{title}</h1>
+                </div>
               </div>
-            </div>
-          </article>
-        </section>
-        <section className={styles.item}>
-          <article className={styles.itemContent}>
-            <div>
-              <img />
-            </div>
-            <div className={styles.itemInfo}>
-              <div>
-                <h1 className={styles.title}>Animals</h1>
-                <p className={styles.count}>33 contents</p>
-              </div>
-              <div>
-                <img />
-              </div>
-            </div>
-          </article>
-        </section>
-        <section className={styles.item}>
-          <article className={styles.itemContent}>
-            <div>
-              <img />
-            </div>
-            <div className={styles.itemInfo}>
-              <div>
-                <h1 className={styles.title}>Numbers</h1>
-                <p className={styles.count}>10 contents</p>
-              </div>
-              <div>
-                <img />
-              </div>
-            </div>
-    </article>
-    </section>
-    <section className={styles.item}>
-      <article className={styles.itemContent}>
-        <div>
-          <img />
-        </div>
-        <div className={styles.itemInfo}>
-          <div>
-            <h1 className={styles.title}>Colors</h1>
-            <p className={styles.count}>13 contents</p>
-          </div>
-          <div>
-            <img />
-          </div>
-        </div>
-      </article>
-    </section>
-    <section className={styles.item}>
-      <article className={styles.itemContent}>
-        <div>
-          <img />
-        </div>
-        <div className={styles.itemInfo}>
-          <div>
-            <h1 className={styles.title}>Personal pronouns</h1>
-            <p className={styles.count}>8 contents</p>
-          </div>
-          <div>
-            <img />
-          </div>
-        </div>
-      </article>
-    </section>
-    </div>
+            </article>
+          </section>
+        ))}
+      </div>
     </>
   )
 }

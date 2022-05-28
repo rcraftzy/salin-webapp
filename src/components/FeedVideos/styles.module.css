@@ -1,6 +1,4 @@
 h2{
-	display: flex;
-	flex-direction: left;
 }
 .content {
 	display: grid;
@@ -11,16 +9,13 @@ h2{
 }
 .item{
 	background-Color: #40345c;
-	border-radius: 10px;
+	border-radius: 14px;
 }
 .itemContent {
-	border-radius: 10px;
 	flex-direction: column;
 }
 .itemInfo {
-	margin: 10px 10px;
-	border-radius: 10px;
-	flex-direction: row;
+	margin: 12px 12px;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -28,11 +23,15 @@ h2{
 	color: #fff;
 	font-size: 16px;
 	text-align: left;
+	margin: 0;
 }
-.count {
-	color: #fff;
-	font-Size: 14px;
-	text-align: left;
+.imageVideo{
+	border-radius: 14px;
+	background-Color: #000;
+}
+.reactPlayer{
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
 }
 
 @media screen and (max-width: 1200px) {
