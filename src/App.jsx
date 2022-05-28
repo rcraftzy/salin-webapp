@@ -3,6 +3,7 @@ import { Route } from 'wouter'
 import Home from './pages/Home'
 import HomeApp from './pages/HomeApp'
 import Videos from './pages/Videos'
+import Upload from './pages/Upload'
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route path='/videos'>
             <Videos />
+          </Route>
+          <Route path='/upload'>
+            <Upload />
           </Route>
         </section>
       </main>

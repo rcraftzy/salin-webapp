@@ -27,7 +27,10 @@ export default function FeedVocabulary() {
 
   return (
     <>
-      <h2>Vocabulary</h2>
+      <header>
+        <h2>Vocabulary</h2>
+        <a className={styles.button}>New section</a>
+      </header>
       <div className={styles.content}>
         {vocabulary.map(({id, title, icon, sound}) => (
           <section key={id} className={styles.item}>
