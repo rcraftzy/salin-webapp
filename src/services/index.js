@@ -41,3 +41,18 @@ export const getVocabulary = async () => {
 
   return [error, data]
 }
+
+export const getWords = async () => {
+  const { data, error } = await supabase
+    .from('word')
+    .select(`*, vocabulary:id_vocabulary (
+      id,
+      title,
+      icon,
+      sound
+    )`)
+    .eq('id_vocabulary', '1')
+  console.log({error, data})
+
+  return [error, data]
+}

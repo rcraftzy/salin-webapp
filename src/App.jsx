@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import HomeApp from './pages/HomeApp'
 import Videos from './pages/Videos'
 import Upload from './pages/Upload'
+import Words from './pages/Words'
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path='/videos'>
             <Videos />
+          </Route>
+          <Route path='/words'>
+            <Words />
           </Route>
           <Route path='/upload'>
             <Upload />

@@ -2,6 +2,7 @@ import styles from './styles.module.css'
 import { getVocabulary } from '../../services'
 import {useEffect, useState} from 'react'
 import AudioPlayer from '../AudioPlayer';
+import { Route } from 'wouter';
   
 export default function FeedVocabulary() {
   const [vocabulary, setVocabulary] = useState([])
@@ -17,6 +18,7 @@ export default function FeedVocabulary() {
 
   useEffect (() => {
     getVocabularies();
+    console.log(vocabulary)
   },[])
 
   if (error) {
@@ -32,28 +34,28 @@ export default function FeedVocabulary() {
         <a className={styles.button}>New section</a>
       </header>
       <div className={styles.content}>
-        {vocabulary.map(({id, title, icon, sound}) => (
-          <section key={id} className={styles.item}>
-            <article className={styles.itemContent}>
-              <div className={styles.ItemImage}>
-                <img className={styles.image} src={icon}/>
-              </div>
-              <div className={styles.itemInfo}>
-                <div>
-                  <h1 className={styles.title}>{title}</h1>
-                  <p className={styles.count}>26 contents</p>
+          {vocabulary.map(({id, title, icon, sound}) => (
+            <section id={id} key={id} className={styles.item}>
+              <article className={styles.itemContent}>
+                <div className={styles.ItemImage}>
+                  <img className={styles.image} src={icon}/>
                 </div>
-                <div>
-                  <AudioPlayer 
-                    {...vocabulary}
-                    src={sound}
-                  />
+                <div className={styles.itemInfo}>
+                  <div>
+                    <h1 className={styles.title}>{title}</h1>
+                    <p className={styles.count}>26 contents</p>
+                  </div>
+                  <div>
+                    <AudioPlayer 
+                      {...vocabulary}
+                      src={sound}
+                    />
+                  </div>
                 </div>
-              </div>
-            </article>
-          </section>
+              </article>
+            </section>
           )
-        )}
+          )}
       </div>
     </>
   )
